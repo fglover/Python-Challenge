@@ -54,7 +54,9 @@ with open(csvpath, newline="") as csvfile:
 
         # z is the percent of total votes per candidate
 
-        z = format(y/count,'%')
+        z = float(y/count) *100
+
+        z = ("%.3f" % z)
 
         vote_percent.append(z)
 
