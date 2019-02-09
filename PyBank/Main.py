@@ -5,6 +5,7 @@ import os
 # Module for reading csv file
 import csv
 
+<<<<<<< HEAD
 csvpath = os.path.join('budget_data.csv')
 
  #Reading using csv module
@@ -14,6 +15,17 @@ with open(csvpath, newline='') as csvfile:
  csvreader = csv.reader(csvfile, delimiter=",")
 
  #read the header row first
+=======
+csvpath = os.path.join('..','Resources','budget_data.csv')
+
+# Reading using csv module
+with open(csvpath, newline='') as csvfile:
+
+# Csv specifies delimiter and variable that holds content
+ csvreader = csv.reader(csvfile, delimiter=",")
+
+ # Read the header row first
+>>>>>>> 7fa640089b64e38d817e6cf324a674318130e737
  csv_header = next(csvreader)
 
  # Create list to store data
@@ -27,6 +39,10 @@ with open(csvpath, newline='') as csvfile:
 
  # Conduct Ask
  for row in csvreader:
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 7fa640089b64e38d817e6cf324a674318130e737
    # Use count to count the number months in this dataset
    count = count + 1
 
@@ -50,12 +66,20 @@ with open(csvpath, newline='') as csvfile:
 
    initial_profit = final_profit
 
+<<<<<<< HEAD
    # Calculate the average change in profits
 
    average_change_profits = (total_change_profits / count)
 
    # Find the max and min change in profits and the corresponding dates these changes were obeserved
 
+=======
+   
+   # Calculate the average change in profits
+   average_change_profits = (total_change_profits / count)
+
+   # Find the max and min change in profits and the corresponding dates these changes were obeserved
+>>>>>>> 7fa640089b64e38d817e6cf324a674318130e737
    greatest_increase_profits = max(monthly_changes)
 
    greatest_decrease_profits = min(monthly_changes)
