@@ -7,13 +7,13 @@ import csv
 
 csvpath = os.path.join('..','Resources','budget_data.csv')
 
- #Reading using csv module
+# Reading using csv module
 with open(csvpath, newline='') as csvfile:
 
-#csv specifies delimiter and variable that holds content
+# Csv specifies delimiter and variable that holds content
  csvreader = csv.reader(csvfile, delimiter=",")
 
- #read the header row first
+ # Read the header row first
  csv_header = next(csvreader)
 
  # Create list to store data
@@ -27,6 +27,7 @@ with open(csvpath, newline='') as csvfile:
 
  # Conduct Ask
  for row in csvreader:
+  
    # Use count to count the number months in this dataset
    count = count + 1
 
@@ -50,12 +51,11 @@ with open(csvpath, newline='') as csvfile:
 
    initial_profit = final_profit
 
+   
    # Calculate the average change in profits
-
    average_change_profits = (total_change_profits / count)
 
    # Find the max and min change in profits and the corresponding dates these changes were obeserved
-
    greatest_increase_profits = max(monthly_changes)
 
    greatest_decrease_profits = min(monthly_changes)
