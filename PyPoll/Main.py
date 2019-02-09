@@ -1,9 +1,20 @@
-#Import os module to create file path accross operating systems
+# Import os module to create file path accross operating systems
 import os
 
-#Module for reading csv file
+# Module for reading csv file
 import csv
 
+# Create the lists to store data.
+count = 0
+candidatelist = []
+unique_candidate = []
+vote_count = []
+vote_percent = []
+
+# Open the csv
+csvpath = os.path.join('..','Resources','election_data.csv')
+
+
 #Create the lists to store data.
 count = 0
 candidatelist = []
@@ -11,26 +22,15 @@ unique_candidate = []
 vote_count = []
 vote_percent = []
 
-#Open the csv
-csvpath = os.path.join('election_data.csv')
 
-
-#Create the lists to store data.
-count = 0
-candidatelist = []
-unique_candidate = []
-vote_count = []
-vote_percent = []
-
-
-#Reading using csv module
+# Reading using csv module
 with open(csvpath, newline="") as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=",")
 
     csv_header = next(csvreader)
 
-    #Conduct ask
+    # Conduct ask
     for row in csvreader:
 
         # Count the total number of votes
